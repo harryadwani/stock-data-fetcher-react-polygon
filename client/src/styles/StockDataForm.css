@@ -1,0 +1,84 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 95%;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .result-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .result-container th,
+  .result-container td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .result-container th {
+    font-weight: bold;
+  }
+  
+  .result-container td.positive {
+    color: green;
+  }
+  
+  .result-container td.negative {
+    color: red;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red;
+    background-color: #ffe0e0;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  

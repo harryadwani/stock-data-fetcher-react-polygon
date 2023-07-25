@@ -1,6 +1,8 @@
+import StockDataForm from "./components/StockDataForm";
+
 function App() {
 	return (
-		<h1>Hello world</h1>
+		<StockDataForm/>
 	);
 }
 

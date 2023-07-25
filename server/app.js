@@ -26,9 +26,25 @@ app.use(bodyParser.json());
 
 app.enable('trust proxy');
 
-app.post('/api/fetchStockData', (req, res) => {
-    // YOUR CODE GOES HERE, PLEASE DO NOT EDIT ANYTHING OUTSIDE THIS FUNCTION
-    res.sendStatus(200);
+app.post("/api/fetchStockData", async (req, res) => {
+    const { stockSymbol, date } = req.body;
+    const POLYGON_API_KEY = "G7THPqlzSRV_MvHPsELplLiT1iCQ7kc0"; //should come as environment variable in practice
+    if (!stockSymbol || !date) {
+        return res
+            .status(400)
+            .json({ error: "Both stock symbol and date are required." });
+    }
+    try {
+        const formattedDate = new Date(date).toISOString().slice(0, 10);
+        const endpoint = `https://api.polygon.io/v1/open-close/${stockSymbol}/${formattedDate}?apiKey=${POLYGON_API_KEY}`;
+        const response = await axios.get(endpoint);
+        res.json(response.data);
+    } catch (error) {
+        console.error("Error fetching stock data:", error.message);
+        res
+            .status(500)
+            .json({ error: "An error occurred while fetching stock data." });
+    }
 });
 
 const port = process.env.PORT || 5000;
